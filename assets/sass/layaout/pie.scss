@@ -1,0 +1,26 @@
+.pie{
+    background-color: $colorBarra;
+    height: 120px;
+    margin-top: 40px;
+
+    @include mobile{
+
+        height: 250px;
+        margin-top: 48px;
+        height: 100px;
+    }
+}
+
+.pie__parrafo{
+
+    color: $colorTerciario;
+    text-align: center;
+    font-size: 16px;
+    padding-top: 40px;
+
+        @include mobile{
+            
+        padding-top: 40px;
+        font-size: 12px;
+    }
+}

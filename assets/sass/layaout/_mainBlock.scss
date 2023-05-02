@@ -1,0 +1,607 @@
+.principal{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    margin-top: 56px;
+
+    @include mobile{
+        display: inline-block;
+        margin-top: 24px;
+    }
+}
+
+.principal__izquierda{
+    width: 25%;
+    display:flex;
+    flex-direction: column;
+
+    @include mobile{
+        
+        display: none;
+    }
+}
+
+.principal__izquierda--mostrar::-webkit-scrollbar{
+    display: none;
+}
+
+.principal__izquierda--mostrar{
+        width: 100%;
+        display: grid;
+        max-width: 360px;
+        grid-auto-flow: column;
+        overflow-x: auto;
+        gap: 10px;
+        padding: 20px 0px 20px 0px;
+        text-align: center;
+        background-color: $colorSecundario;
+        margin-top: 3%;
+}
+
+
+/*modulo boton conversaciones*/
+
+.boton__superior{
+    display:none;
+
+    @include mobile{
+        margin-top: 5%;
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+
+/*buscador*/
+
+.principal__buscador{
+
+    width: 100%;
+    margin: 5% 0% 5% 1%;
+
+    @include mobile{
+        display: none;
+    }
+}
+
+.buscador__input{
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid $colorSecundario;
+  border-radius: 20px 0px 0px 20px;
+  float: left;
+  width: 74%;
+  background-color: $colorSecundario;
+  color: $colorTerciario;
+
+  & ::after{
+    content: "";
+   clear: both;
+   display: table;
+  }
+}
+
+.buscador__input::-webkit-input-placeholder {
+    color: $colorTerciario; 
+ }
+
+.buscador__boton{
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: $colorSecundario;
+  color: $colorTerciario;
+  font-size: 17px;
+  border: 1px solid $colorSecundario;
+  border-radius: 0px 20px 20px 0px;
+  border-left: none;
+  cursor: pointer;
+
+  &:hover{
+    background: $colorGradiente-1;
+    color: $colorPrincipal;
+  }
+}
+
+
+/*Card conversación*/
+
+.principal__chat{
+    display:flex;
+    align-items: center;
+    width:97%;
+    margin-bottom: 3%;
+    background-color: $colorSecundario;
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    color: $colorPrincipal;
+    border-radius: 10px 0 0 10px;
+
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: stretch;
+        align-content: center;
+        text-align: center;
+        width: 65px;
+        margin: 0px 5px 0px 5px;
+        border-radius: 8px 8px 8px 8px;
+        
+    }
+    
+}
+
+.principal__chat--activo{
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    width:97%;
+    margin-bottom: 3%;
+    background: linear-gradient(to right, $colorGradiente-1, $colorGradiente-2);
+    padding-top: 5%;
+    padding-left: 5%;
+    padding-bottom: 5%;
+    color: $colorPrincipal;
+    border-radius: 10px 0 0 10px;
+
+    @include mobile{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: stretch;
+        align-content: center;
+        text-align: center;
+        width: 65px;
+        margin: 0px 5px 0px 5px;
+        border-radius: 8px 8px 8px 8px;
+        
+    }
+}
+
+.principal__chat__img{
+    width: 15%;
+    margin: 0%;
+    padding-right: 5% ;
+    position: relative;
+
+    @include mobile{
+        width: 80%;
+        padding-right: 0%;
+        margin-bottom: -5%;
+
+    }
+}
+
+.principal__chat__img__contenido{
+    width:100%;
+    border-radius: 50%;
+}
+
+.principal__chat__notificacion{
+    background-color: $colorNotificacion;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: -9%;
+    right: 20%;
+    border-radius: 60%;
+    border: 3px solid $colorSecundario;
+
+    @include mobile{
+        width: 15px;
+        height: 15px;
+        top: -15%;
+        right: -15%;
+    }
+}
+
+.principal__chat__notificacion--activo{
+
+    background-color: $colorNotificacionActivo;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: -9%;
+    right: 20%;
+    border-radius: 60%;
+    border: 3px solid $colorSecundario;
+
+    @include mobile{
+        width: 15px;
+        height: 15px;
+        top: -15%;
+        right: -15%;
+    }
+
+}
+
+.principal__chat__notificacion--abierto{
+    background-color: $colorNotificacionActivo;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: -9%;
+    right: 20%;
+    border-radius: 60%;
+    border: 3px solid $colorGradiente-1;
+
+    @include mobile{
+        width: 15px;
+        height: 15px;
+        top: -15%;
+        right: -15%;
+        border: 3px solid $colorSecundario;
+    }
+}
+
+.principal__chat__textos{
+    width: 60%;
+
+    @include mobile{
+        text-align: center;
+    }
+}
+
+.principal__chat__textos__fecha{
+    font-weight: 300;
+    font-size: 12px;
+}
+
+.principal__chat__textos__fecha--noRead{
+
+    margin-left: 2px;
+    font-weight: 600;
+
+}
+
+.chat_textos_mensajeFecha{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.principal__chat__textos__nombre{
+    margin-bottom: -2%;
+    text-align: start;
+    font-weight: 400;
+
+    @include mobile{
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+.principal__chat__textos__mensaje{
+   
+    font-weight: 300;
+}
+
+.principal__chat__textos__mensaje--noRead{
+   
+    font-weight: 600;
+}
+
+.chat_textos_mensajeFecha{
+    
+    @include mobile{
+        display: none;
+    }
+}
+
+/*Modulo derecho, chat desplegado*/
+
+.principal__derecha{
+    background-color: $colorSecundario;
+    width: 60%;
+    display: inherit;
+    border-radius: 24px;
+
+    @include mobile{
+        width: 100%;
+        display: block;
+        margin-top: 16px;
+    }
+}
+
+.conversacion__barraContacto{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $colorBarra;
+    border-radius: 24px 24px 0px 0px;
+
+}
+
+.barraContacto__foto{
+    width: 72px;
+
+    @include mobile{
+     width: 56px;   
+    }
+}
+
+.fotoContacto{
+    width:100%;
+    border-radius: 50%;
+}
+
+.barraContacto__datos{
+    width: 30%;
+    margin-left: 7%;
+    color: $colorPrincipal;
+
+    @include mobile{
+        width: 50%;
+        margin-left: 15%;
+    }
+}
+
+.datos__nombre{
+    margin-bottom: -3%;
+}
+
+.datos__ultimoMensaje{
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.barraContacto__estado{
+    width: 15px;
+    height: 15px;
+    background-color: $colorNotificacionActivo;
+    border-radius: 10px;
+    margin-left: -8%;
+
+    @include mobile{
+        margin-left: 5%;
+    }
+}
+
+
+/*Estructura globos de chat*/
+
+.conversacion__globo{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 36px;
+
+}
+
+.conversacionRecibida{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items:flex-start;
+
+    @include mobile{
+        padding-left: -50px;
+    }
+}
+
+.ConversacionRecibida__fotoContacto{
+    width: 5%;
+    margin: 0%;
+    padding-right: 5% ;
+    position: relative;
+
+    @include mobile{
+        width: 12%;
+        padding-right: 0%;
+        margin-bottom: -5%;
+
+    }
+
+}
+
+.fotoContacto__foto{
+    width:100%;
+    border-radius: 50%;
+    margin-left: 30px;
+}
+
+
+.ConversacionRecibida__mensajeHora{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+    width: 45%;
+
+    @include mobile{
+        margin-left: 40px;
+        width: 70%;
+        margin-bottom: 1%;
+
+    }
+}
+
+.conversacionRecibida__mensaje{
+    background: linear-gradient(to bottom right, $colorGradiente-1, $colorGradiente-2);
+    padding: 3%;
+    color: $colorPrincipal;
+    border-radius: 0px 16px 16px 16px;
+}
+
+.conversacionRecibida__mensaje{
+
+    @include mobile{
+        font-size: 12px;
+        font-weight: 400;
+    }
+}
+
+.ConversacionRecibida__hora{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hora__contenido{
+    color: $colorTerciario;
+    font-size: 12px;
+}
+
+
+/*chat derecha*/
+
+.conversacionEnviada{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items:flex-start;
+    
+
+    @include mobile {
+        padding-right: 25px;
+    }
+}
+
+.ConversacionEnviada__fotoContacto{
+    width: 5%;
+    margin: 0%;
+    padding-right: 5% ;
+    position: relative;
+
+    @include mobile{
+        width: 12%;
+        margin-bottom: -5%;
+        margin-left: -20px;
+
+    }
+
+}
+
+.fotoContacto__foto{
+    width:100%;
+    border-radius: 50%;
+}
+
+
+.ConversacionEnviada__mensajeHora{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: stretch;
+    width: 45%;
+
+    @include mobile {
+        width: 80%;
+    }
+
+}
+
+.conversacionEnviada__mensaje{
+    background: linear-gradient(to bottom right, $colorGradiente-3, $colorGradiente-4);
+    padding: 3%;
+    color: $colorPrincipal;
+    border-radius: 16px 0px 16px 16px;
+
+    @include mobile {
+
+    }
+}
+
+.ConversacionEnviada__hora{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.hora__contenido{
+    color: $colorTerciario;
+    font-size: 12px;
+}
+
+.icono__hora{
+    color: $colorTerciario;
+    font-size: 10px;
+    margin-left: 4px;
+}
+
+/*Barra mensaje*/
+
+.escribirMensaje{
+    background-color: $colorBarra;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    min-height: 72px;
+    border-radius: 0px 0px 24px 24px;
+}
+
+.mensaje__contenido{
+    width: 100%;
+}
+
+.escribir__cajaAdjuntar{
+    width: 20%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/*barra buscador*/
+
+.escribir__barraMensaje{
+    display: flex;
+    height: 30px;
+    width: 80%;
+    margin: 5% 0% 5% 1%;
+}
+
+
+.mensaje__input{
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid $colorSecundario;
+  border-radius: 20px 0px 0px 20px;
+  float: left;
+  width: 85%;
+  background-color: $colorSecundario;
+  color: $colorPrincipal;
+
+  & ::after{
+    content: "";
+   clear: both;
+   display: table;
+  }
+
+  @include mobile{
+    width: 70%;
+  }
+}
+
+.mensaje__input::-webkit-input-placeholder {
+    color: $colorTerciario; 
+ }
+
+.mensaje__boton{
+  float: left;
+  width: 10%;
+  padding: 10px;
+  background: $colorSecundario;
+  color: $colorTerciario;
+  font-size: 17px;
+  border: 1px solid $colorSecundario;
+  border-radius: 0px 20px 20px 0px;
+  border-left: none;
+  cursor: pointer;
+
+  &:hover{
+    background: $colorGradiente-1;
+    color: $colorPrincipal;
+  }
+}

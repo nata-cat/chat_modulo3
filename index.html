@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diseño responsive</title>
+
+    <!--Hoja de estilo-->
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!--CDN Iconos y fuentes-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header class="cabecera">
+
+        <div class="navegador" id="menuPrincipal">
+            <a href="#" class="navegador__link">Home</a>
+            <a href="#" class="navegador__link">Preguntas Frecuentes</a>
+            <a href="#" class="navegador__link">Manuales y Tutoriales</a>
+            <a href="#" class="navegador__link">Noticias</a>
+            <a href="#" class="navegador__link">Calendario</a>
+            <a href="#" class="navegador__link">Perfil de Usuario</a>
+            <a href="#" class="navegador__link">Organigrama</a>
+            <a href="#" id="linkActivo" class="navegador__link--active">Chat</a>
+            <a href="javascript:void(0);" class="navegador__icon" id="iconoNavegador" onclick="desplegarMenu()">
+                <i class="fa fa-bars boton__icono"></i>
+            </a>
+
+        </div>
+
+    </header>
+
+    <main class="principal">
+
+        <div class="boton__superior">
+            <button class="boton__chat" onclick="mostrarChat()"> Ver Conversaciones</button>
+        </div>
+        <aside id="moduloConversaciones" class="principal__izquierda">
+            <article class="principal__buscador">
+                <form class="buscador__contenido" action="">
+                    <input class="buscador__input" type="text" placeholder="Busca un chat" name="search">
+                    <button class="buscador__boton" type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </article>
+
+            <!--Tarjeta chat 1-->
+            <article class="principal__chat">
+                <figure class="principal__chat__img">
+                    <img class="principal__chat__img__contenido" src="assets/img/fotos-perfil1.jpg" alt="">
+                    <div class="principal__chat__notificacion"></div>
+                </figure>
+                <aside class="principal__chat__textos">
+                    <div class="chat_textos_nombre">
+                        <h3 class="principal__chat__textos__nombre">Daniela Contreras</h3>
+                    </div>
+
+                    <div class="chat_textos_mensajeFecha">
+                        <p class="principal__chat__textos__mensaje--noRead">Este es un mensaje...</p>
+                        <p class="principal__chat__textos__fecha--noRead">7hr</p>
+                    </div>
+                </aside>
+            </article>
+
+
+            <!--Tarjeta chat 2-->
+            <article class="principal__chat">
+                <figure class="principal__chat__img">
+                    <img class="principal__chat__img__contenido" src="assets/img/fotos-perfil2.jpg" alt="">
+                    <div class="principal__chat__notificacion--activo"></div>
+                </figure>
+                <aside class="principal__chat__textos">
+                    <div class="chat_textos_nombre">
+                        <h3 class="principal__chat__textos__nombre">Felipe González</h3>
+                    </div>
+
+                    <div class="chat_textos_mensajeFecha">
+                        <p class="principal__chat__textos__mensaje">Este es un mensaje falso...</p>
+                        <p class="principal__chat__textos__fecha">7hr</p>
+                    </div>
+                </aside>
+            </article>
+
+            <!--Tarjeta chat 3-->
+            <article class="principal__chat--activo">
+                <figure class="principal__chat__img">
+                    <img class="principal__chat__img__contenido" src="assets/img/fotos-perfil3.jpg" alt="">
+                    <div class="principal__chat__notificacion--abierto"></div>
+                </figure>
+                <aside class="principal__chat__textos">
+                    <div class="chat_textos_nombre">
+                        <h3 class="principal__chat__textos__nombre">Isidora Herrera</h3>
+                    </div>
+
+                    <div class="chat_textos_mensajeFecha">
+                        <p class="principal__chat__textos__mensaje">Este es un mensaje falso...</p>
+                        <p class="principal__chat__textos__fecha">7hr</p>
+                    </div>
+                </aside>
+            </article>
+
+            <!--Tarjeta chat 4-->
+            <article class="principal__chat">
+                <figure class="principal__chat__img">
+                    <img class="principal__chat__img__contenido" src="assets/img/fotos-perfil4.jpg" alt="">
+                    <div class="principal__chat__notificacion"></div>
+                </figure>
+                <aside class="principal__chat__textos">
+                    <div class="chat_textos_nombre">
+                        <h3 class="principal__chat__textos__nombre">Valentina Aguilar</h3>
+                    </div>
+
+                    <div class="chat_textos_mensajeFecha">
+                        <p class="principal__chat__textos__mensaje">Este es un mensaje falso...</p>
+                        <p class="principal__chat__textos__fecha">7hr</p>
+                    </div>
+                </aside>
+            </article>
+
+            <!--Tarjeta chat 5-->
+            <article class="principal__chat">
+                <figure class="principal__chat__img">
+                    <img class="principal__chat__img__contenido" src="assets/img/fotos-perfil5.jpg" alt="">
+                    <div class="principal__chat__notificacion"></div>
+                </figure>
+                <aside class="principal__chat__textos">
+                    <div class="chat_textos_nombre">
+                        <h4 class="principal__chat__textos__nombre">Javiera Rojas</h4>
+                    </div>
+
+                    <div class="chat_textos_mensajeFecha">
+                        <p class="principal__chat__textos__mensaje--noRead">Este es un mensaje...</p>
+                        <p class="principal__chat__textos__fecha--noRead">7hr</p>
+                    </div>
+                </aside>
+            </article>
+
+            <!--Tarjeta chat 6-->
+            <article class="principal__chat">
+                <figure class="principal__chat__img">
+                    <img class="principal__chat__img__contenido" src="assets/img/fotos-perfil6.jpg" alt="">
+                    <div class="principal__chat__notificacion--activo"></div>
+                </figure>
+                <aside class="principal__chat__textos">
+                    <div class="chat_textos_nombre">
+                        <h4 class="principal__chat__textos__nombre">Cristóbal Muñoz</h4>
+                    </div>
+
+                    <div class="chat_textos_mensajeFecha">
+                        <p class="principal__chat__textos__mensaje">Este es un mensaje...</p>
+                        <p class="principal__chat__textos__fecha">7hr</p>
+                    </div>
+                </aside>
+            </article>
+        </aside>
+
+        <section class="principal__derecha">
+            <aside class="conversacion">
+                <!--Barra superior contacto-->
+                <div class="conversacion__barraContacto">
+                    <div class="barraContacto__foto">
+                        <figure class="fotoContacto"><img class="principal__chat__img__contenido"
+                                src="assets/img/fotos-perfil3.jpg" alt=""></figure>
+                    </div>
+
+                    <div class="barraContacto__datos">
+                        <h3 class="datos__nombre">Isidora Herrera</h3>
+                        <p class="datos__ultimoMensaje">Ultima vez conectado hace: 7hr</p>
+                    </div>
+
+                    <div class="barraContacto__estado"></div>
+                </div>
+
+
+
+                <!--Globos de conversacion-->
+
+                <div class="conversacion__globo">
+
+                    <div class="conversacionRecibida">
+                        <div class="ConversacionRecibida__fotoContacto">
+                            <img class="fotoContacto__foto" src="assets/img/fotos-perfil3.jpg">
+                        </div>
+
+                        <div class="ConversacionRecibida__mensajeHora">
+
+                            <article class="conversacionRecibida__mensaje">
+                                <p>Muy lejos, más allá de las montañas de palabras, alejados de los países de las
+                                    vocales.</p>
+                            </article>
+
+                            <div class="ConversacionRecibida__hora">
+                                <p class="hora__contenido">08:55</p>
+                                <i class="fa-solid fa-check-double icono__hora"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="conversacionEnviada">
+
+                        <div class="ConversacionEnviada__mensajeHora">
+
+                            <article class="conversacionEnviada__mensaje">
+                                <p>Muy lejos, más allá de las montañas de palabras.</p>
+                            </article>
+
+                            <div class="ConversacionEnviada__hora">
+                                <p class="hora__contenido">08:55</p>
+                                <i class="fa-solid fa-check-double icono__hora"></i>
+                            </div>
+
+
+                        </div>
+
+                        <div class="ConversacionEnviada__fotoContacto">
+                            <img class="fotoContacto__foto" src="assets/img/fotos-perfil7.jpg">
+                        </div>
+                    </div>
+                    <div class="conversacionRecibida">
+                        <div class="conversacionRecibida">
+                            <div class="ConversacionRecibida__fotoContacto">
+                                <img class="fotoContacto__foto" src="assets/img/fotos-perfil3.jpg">
+                            </div>
+
+                            <div class="ConversacionRecibida__mensajeHora">
+
+                                <article class="conversacionRecibida__mensaje">
+                                    <p>Alejados de los países de lasvocales y las
+                                        consonantes, viven los textos simulados.</p>
+                                </article>
+
+                                <div class="ConversacionRecibida__hora">
+                                    <p class="hora__contenido">08:55</p>
+                                    <i class="fa-solid fa-check-double icono__hora"></i>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="conversacionRecibida">
+                        <div class="ConversacionRecibida__fotoContacto">
+                            <img class="fotoContacto__foto" src="assets/img/fotos-perfil3.jpg">
+                        </div>
+
+                        <div class="ConversacionRecibida__mensajeHora">
+
+                            <article class="conversacionRecibida__mensaje">
+                                <p>Muy lejos, más allá de las montañas de palabras, de las
+                                    vocales.</p>
+                            </article>
+
+                            <div class="ConversacionRecibida__hora">
+                                <p class="hora__contenido">08:55</p>
+                                <i class="fa-solid fa-check-double icono__hora"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="conversacionEnviada">
+
+                        <div class="ConversacionEnviada__mensajeHora">
+
+                            <article class="conversacionEnviada__mensaje">
+                                <p>Muy lejos, más allá de las montañas de palabras, alejados de los países de las
+                                    vocales y las consonantes.</p>
+                            </article>
+
+                            <div class="ConversacionEnviada__hora">
+                                <p class="hora__contenido">08:55</p>
+                                <i class="fa-solid fa-check-double icono__hora"></i>
+                            </div>
+
+
+                        </div>
+
+                        <div class="ConversacionEnviada__fotoContacto">
+                            <img class="fotoContacto__foto" src="assets/img/fotos-perfil7.jpg">
+                        </div>
+                    </div>
+                </div>
+
+                <!--Barra para escribir mensaje-->
+
+                <div class="escribirMensaje">
+                    <div class="escribir__cajaAdjuntar">
+
+                        <!--Boton Dropup para adjuntar documentos-->
+
+                        <div class="dropup">
+                            <button class="dropup__boton"><p class="mensaje__adjuntar">Adjuntar</p><img class="icon__clip" src="assets/img/paperclip-solid.svg"></button>
+                            <div class="dropup-content">
+                              <a href="#">Documento</a>
+                              <a href="#">Vídeo</a>
+                              <a href="#">Fotografía</a>
+                            </div>
+                          </div>
+                          
+
+                    </div>
+                    <div class="escribir__barraMensaje">
+                        <form class="mensaje__contenido" action="">
+                            <input class="mensaje__input" type="text" placeholder="Escribe un mensaje" name="text">
+                            <button class="mensaje__boton" type="submit"><i class="fa-regular fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+
+            </aside>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p class="pie__parrafo">Todos los derechos reservados</p>
+    </footer>
+
+    <!--Javascript-->
+    <script src="https://kit.fontawesome.com/61db47d5d9.js" crossorigin="anonymous"></script>
+    <script src="assets/js/scripts.js"></script>
+</body>
+
+</html>

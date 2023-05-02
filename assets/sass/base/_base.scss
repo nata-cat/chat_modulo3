@@ -1,0 +1,40 @@
+//apariencia del body generales
+@mixin mobile {
+    @media only screen and (max-width: 768px){
+        @content;
+    }
+}
+
+body{
+    width: 100%;
+    margin: 0;
+    background-color: $colorFondo;
+
+    @include mobile{
+     width: 100%;  
+     margin: 0;
+     padding: 0; 
+    }
+}
+
+
+.boton__icono{
+    width: 20px;
+    color: $colorPrincipal ;
+}
+
+.icon__clip{
+    width: 16px;
+    margin-left: 4px;
+
+    &:hover{
+        color: $colorPrincipal;
+    }
+}
+
+.mensaje__adjuntar{
+
+    @include mobile {
+        display: none;
+    }
+}

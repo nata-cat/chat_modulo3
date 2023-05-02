@@ -1,0 +1,112 @@
+
+
+.navegador{
+    background-color: $colorBarra;
+    overflow: hidden;
+    width: 100%;
+}
+
+.navegador--responsive{
+    position: relative;
+    background-color: $colorBarra;
+    overflow: hidden;
+    width: 100%;
+    
+
+    @include mobile{
+    position: relative;
+    background-color: $colorBarra;
+    overflow: hidden;
+    width: 100%;
+    }
+}
+
+/*Links de barra de navegación*/
+
+.navegador__link{
+    float: left;
+    display: block;
+    color: $colorPrincipal;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+    &:hover{
+        background-color: $colorGradiente-4;
+        color: $colorPrincipal;
+        text-decoration: underline;
+    }
+
+    @include mobile{
+        display: none;
+    }
+}
+
+.navegador__link--responsive{
+    
+
+    @include mobile{
+    float: none;
+    display: block;
+    color: $colorPrincipal;
+    text-align: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    }
+}
+
+
+
+/*Definicion del estilo del link activo*/
+
+.navegador__link--active{
+    float: left;
+    display: block;
+    color: $colorGradiente-3;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: 17px;
+    background-color: $colorFondo;
+
+    @include mobile{
+        
+        background-color: $colorBarra;
+        padding: 20px 250px 20px 24px;
+    }
+}
+
+
+
+
+
+/*Estilo icono*/
+
+.navegador__icon{
+
+    display:none;
+
+    @include mobile{
+        float: right;
+        display: block;
+        padding: 20px 10px 20px 0px ;
+        background-color: $colorBarra;
+    }
+}
+
+.navegador__icon--responsive{
+
+    @include mobile{
+    float: right;
+    display: block;
+    padding: 20px 10px 20px 0px ;    
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: $colorBarra;
+    z-index: 3;
+    }
+}
